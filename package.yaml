@@ -1,0 +1,42 @@
+name:                packman
+version:             0.1.0.0
+synopsis:            A knapsack packer program
+description:         Solve instances of 0/1 knapsack problem
+homepage:            https://github.com/malteneuss/packman#readme
+license:             BSD3
+author:              Malte Neuss
+maintainer:          neussmalte@gmail.com
+copyright:           (c) 2017 Malte Neuss
+category:            undefined
+
+extra-source-files:
+- README.md
+
+dependencies:
+- base >= 4.7 && < 5
+- vector == 0.*
+- vector-algorithms == 0.*
+
+library:
+  source-dirs:
+  - src
+
+executables:
+  packman:
+    source-dirs:      app
+    main:             Main.hs
+    dependencies:
+    - packman
+    - optparse-applicative == 0.13.*
+    - text == 1.2.*
+    - random == 1.1.*
+
+tests:
+  tastytests:
+    main: test.hs
+    source-dirs:
+    - test
+    dependencies:
+    - tasty == 0.*
+    - tasty-hunit == 0.*
+    - tasty-smallcheck == 0.*

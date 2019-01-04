@@ -1,0 +1,59 @@
+-- This file has been generated from package.yaml by hpack version 0.17.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           packman
+version:        0.1.0.0
+synopsis:       A knapsack packer program
+description:    Solve instances of 0/1 knapsack problem
+category:       undefined
+homepage:       https://github.com/malteneuss/packman#readme
+author:         Malte Neuss
+maintainer:     neussmalte@gmail.com
+copyright:      (c) 2017 Malte Neuss
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    README.md
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >= 4.7 && < 5
+    , vector == 0.*
+    , vector-algorithms == 0.*
+  exposed-modules:
+      Knapsack
+  default-language: Haskell2010
+
+executable packman
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  build-depends:
+      base >= 4.7 && < 5
+    , vector == 0.*
+    , vector-algorithms == 0.*
+    , packman
+    , optparse-applicative == 0.13.*
+    , text == 1.2.*
+    , random == 1.1.*
+  default-language: Haskell2010
+
+test-suite tastytests
+  type: exitcode-stdio-1.0
+  main-is: test.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base >= 4.7 && < 5
+    , vector == 0.*
+    , vector-algorithms == 0.*
+    , tasty == 0.*
+    , tasty-hunit == 0.*
+    , tasty-smallcheck == 0.*
+  default-language: Haskell2010
