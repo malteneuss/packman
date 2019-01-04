@@ -1,4 +1,5 @@
-# Packman, a terminal 0/1 knapsack problem solver
+# Packman 
+A simple terminal 0/1 knapsack problem solver written in Haskell for the  "Mai 2017 IT-talents.de" code competition
 
 ## Installation
 Packman is written in Haskell and uses the widespread Haskell "stack" build tool, so
